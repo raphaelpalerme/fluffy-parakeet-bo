@@ -1,89 +1,189 @@
-import type { Struct, Schema } from '@strapi/strapi';
+import type { Schema, Struct } from '@strapi/strapi';
 
-export interface DataQuestion extends Struct.ComponentSchema {
-  collectionName: 'components_data_questions';
+export interface ChallengeDataColorPerceptionGame
+  extends Struct.ComponentSchema {
+  collectionName: 'components_challenge_data_color_perception_games';
   info: {
-    displayName: 'array_string_values';
-    icon: 'question';
     description: '';
+    displayName: 'COLOR_PERCEPTION_GAME';
   };
   attributes: {
-    value: Schema.Attribute.Text;
+    explanation: Schema.Attribute.Component<'data.explanation', false>;
+    question: Schema.Attribute.Component<'data.question', true>;
   };
 }
 
-export interface DataOption extends Struct.ComponentSchema {
-  collectionName: 'components_data_options';
+export interface ChallengeDataFillInTheBlanks extends Struct.ComponentSchema {
+  collectionName: 'components_challenge_data_fill_in_the_blanks';
   info: {
-    displayName: 'option';
-    icon: 'apps';
     description: '';
+    displayName: 'FILL_IN_THE_BLANKS';
   };
   attributes: {
-    image: Schema.Attribute.Media<'images'>;
-    description: Schema.Attribute.Text;
-    answer: Schema.Attribute.String;
-    correct: Schema.Attribute.Boolean;
+    correctAnswerByOrder: Schema.Attribute.Component<'data.question', true>;
+    explanation: Schema.Attribute.Component<'data.explanation', false>;
+    question: Schema.Attribute.Component<'data.question', true>;
     text: Schema.Attribute.Text;
   };
 }
 
-export interface DataGame extends Struct.ComponentSchema {
-  collectionName: 'components_data_games';
+export interface ChallengeDataFindTheIntruder extends Struct.ComponentSchema {
+  collectionName: 'components_challenge_data_find_the_intruders';
   info: {
-    displayName: 'Game';
-    icon: 'puzzle';
-    description: '';
+    displayName: 'FIND_THE_INTRUDER';
   };
   attributes: {
-    left: Schema.Attribute.String;
-    right: Schema.Attribute.String;
-    image: Schema.Attribute.Media<'images'>;
-    leftId: Schema.Attribute.BigInteger;
-    rightId: Schema.Attribute.BigInteger;
-  };
-}
-
-export interface DataGameWord extends Struct.ComponentSchema {
-  collectionName: 'components_data_game_words';
-  info: {
-    displayName: 'game_word';
-    description: '';
-  };
-  attributes: {
-    wordSearch: Schema.Attribute.Component<'data.question', true>;
-    widthGrid: Schema.Attribute.Integer;
-    heightGrid: Schema.Attribute.Integer;
-    gridPhoneSmall: Schema.Attribute.Component<'data.question', true>;
-    gridPhoneMedium: Schema.Attribute.Component<'data.question', true>;
-    gridTablet: Schema.Attribute.Component<'data.question', true>;
-    gridPCLarge: Schema.Attribute.Component<'data.question', true>;
-  };
-}
-
-export interface DataExplanation extends Struct.ComponentSchema {
-  collectionName: 'components_data_explanations';
-  info: {
-    displayName: 'explanation';
-    icon: 'chartCircle';
-    description: '';
-  };
-  attributes: {
-    paragraphs: Schema.Attribute.Component<'data.question', true>;
-    video: Schema.Attribute.Media<'videos'>;
-  };
-}
-
-export interface ChallengeDataWordSearch extends Struct.ComponentSchema {
-  collectionName: 'components_challenge_data_word_searches';
-  info: {
-    displayName: 'WORD_SEARCH';
-    description: '';
-  };
-  attributes: {
-    question: Schema.Attribute.Component<'data.question', true>;
-    game: Schema.Attribute.Component<'data.game-word', false>;
+    correctWord: Schema.Attribute.String;
     explanation: Schema.Attribute.Component<'data.explanation', false>;
+    question: Schema.Attribute.Component<'data.question', true>;
+    wordsToChoice: Schema.Attribute.Component<'data.question', true>;
+  };
+}
+
+export interface ChallengeDataFindingError extends Struct.ComponentSchema {
+  collectionName: 'components_challenge_data_finding_errors';
+  info: {
+    displayName: 'FINDING_ERROR';
+  };
+  attributes: {
+    error: Schema.Attribute.String;
+    explanation: Schema.Attribute.Component<'data.explanation', false>;
+    question: Schema.Attribute.Component<'data.question', true>;
+    sentence: Schema.Attribute.Text;
+  };
+}
+
+export interface ChallengeDataImageToCaption extends Struct.ComponentSchema {
+  collectionName: 'components_challenge_data_image_to_captions';
+  info: {
+    description: '';
+    displayName: 'IMAGE_TO_CAPTION';
+  };
+  attributes: {
+    explanation: Schema.Attribute.Component<'data.explanation', false>;
+    options: Schema.Attribute.Component<'data.option', false>;
+    question: Schema.Attribute.Component<'data.question', true>;
+  };
+}
+
+export interface ChallengeDataInputTextOpen extends Struct.ComponentSchema {
+  collectionName: 'components_challenge_data_input_text_opens';
+  info: {
+    displayName: 'INPUT_TEXT_OPEN';
+  };
+  attributes: {
+    explanation: Schema.Attribute.Component<'data.explanation', false>;
+    options: Schema.Attribute.Component<'data.option', true>;
+    question: Schema.Attribute.Component<'data.question', true>;
+  };
+}
+
+export interface ChallengeDataMatchingGame extends Struct.ComponentSchema {
+  collectionName: 'components_challenge_data_matching_games';
+  info: {
+    description: '';
+    displayName: 'MATCHING_GAME';
+  };
+  attributes: {
+    explanation: Schema.Attribute.Component<'data.explanation', false>;
+    game: Schema.Attribute.Component<'data.game', true>;
+    question: Schema.Attribute.Component<'data.question', true>;
+  };
+}
+
+export interface ChallengeDataMixedQuotes extends Struct.ComponentSchema {
+  collectionName: 'components_challenge_data_mixed_quotes';
+  info: {
+    displayName: 'MIXED_QUOTES';
+  };
+  attributes: {
+    correctOrder: Schema.Attribute.Component<'data.question', true>;
+    question: Schema.Attribute.Component<'data.question', true>;
+    shuffledWords: Schema.Attribute.Component<'data.question', true>;
+  };
+}
+
+export interface ChallengeDataPercentageQuestion
+  extends Struct.ComponentSchema {
+  collectionName: 'components_challenge_data_percentage_questions';
+  info: {
+    description: '';
+    displayName: 'PERCENTAGE_QUESTION';
+  };
+  attributes: {
+    answer: Schema.Attribute.Integer;
+    explanation: Schema.Attribute.Component<'data.explanation', false>;
+    question: Schema.Attribute.Component<'data.question', true>;
+  };
+}
+
+export interface ChallengeDataPuzzle extends Struct.ComponentSchema {
+  collectionName: 'components_challenge_data_puzzles';
+  info: {
+    description: '';
+    displayName: 'PUZZLE';
+  };
+  attributes: {
+    explanation: Schema.Attribute.Component<'data.explanation', false>;
+    image: Schema.Attribute.Media<'images' | 'files'> &
+      Schema.Attribute.Required;
+    question: Schema.Attribute.Component<'data.question', true>;
+  };
+}
+
+export interface ChallengeDataSelectOneVisual extends Struct.ComponentSchema {
+  collectionName: 'components_challenge_data_select_one_visuals';
+  info: {
+    displayName: 'SELECT_ONE_VISUAL';
+    icon: 'archive';
+  };
+  attributes: {
+    explanation: Schema.Attribute.Component<'data.explanation', false>;
+    options: Schema.Attribute.Component<'data.option', true>;
+    question: Schema.Attribute.Component<'data.question', true>;
+  };
+}
+
+export interface ChallengeDataSelectOneWithCharacter
+  extends Struct.ComponentSchema {
+  collectionName: 'components_challenge_data_select_one_with_characters';
+  info: {
+    description: '';
+    displayName: 'SELECT_ONE_WITH_CHARACTER';
+  };
+  attributes: {
+    explanation: Schema.Attribute.Component<'data.explanation', false>;
+    image: Schema.Attribute.Media<'images'>;
+    imageAlt: Schema.Attribute.String;
+    options: Schema.Attribute.Component<'data.option', true>;
+    question: Schema.Attribute.Component<'data.question', true>;
+  };
+}
+
+export interface ChallengeDataShortAnswerQuestion
+  extends Struct.ComponentSchema {
+  collectionName: 'components_challenge_data_short_answer_questions';
+  info: {
+    displayName: 'SHORT_ANSWER_QUESTION';
+  };
+  attributes: {
+    answer: Schema.Attribute.Text;
+    explanation: Schema.Attribute.Component<'data.explanation', false>;
+    question: Schema.Attribute.Component<'data.question', true>;
+  };
+}
+
+export interface ChallengeDataSortingGame extends Struct.ComponentSchema {
+  collectionName: 'components_challenge_data_sorting_games';
+  info: {
+    description: '';
+    displayName: 'SORTING_GAME';
+  };
+  attributes: {
+    explanation: Schema.Attribute.Component<'data.explanation', false>;
+    image: Schema.Attribute.Media<'images'>;
+    options: Schema.Attribute.Component<'data.option', true>;
+    question: Schema.Attribute.Component<'data.question', true>;
   };
 }
 
@@ -98,188 +198,132 @@ export interface ChallengeDataVideo extends Struct.ComponentSchema {
   };
 }
 
-export interface ChallengeDataSortingGame extends Struct.ComponentSchema {
-  collectionName: 'components_challenge_data_sorting_games';
+export interface ChallengeDataWordSearch extends Struct.ComponentSchema {
+  collectionName: 'components_challenge_data_word_searches';
   info: {
-    displayName: 'SORTING_GAME';
     description: '';
+    displayName: 'WORD_SEARCH';
   };
   attributes: {
+    explanation: Schema.Attribute.Component<'data.explanation', false>;
+    game: Schema.Attribute.Component<'data.game-word', false>;
     question: Schema.Attribute.Component<'data.question', true>;
-    options: Schema.Attribute.Component<'data.option', true>;
+  };
+}
+
+export interface ChallengeDataWordle extends Struct.ComponentSchema {
+  collectionName: 'components_challenge_data_wordles';
+  info: {
+    description: '';
+    displayName: 'WORDLE';
+  };
+  attributes: {
+    explanation: Schema.Attribute.Component<'data.explanation', false>;
+    question: Schema.Attribute.Component<'data.question', true>;
+    wordbank: Schema.Attribute.Component<'data.question', true>;
+  };
+}
+
+export interface DataExplanation extends Struct.ComponentSchema {
+  collectionName: 'components_data_explanations';
+  info: {
+    description: '';
+    displayName: 'explanation';
+    icon: 'chartCircle';
+  };
+  attributes: {
+    image: Schema.Attribute.Media<'images' | 'files'>;
+    paragraphs: Schema.Attribute.Component<'data.question', true>;
+    video: Schema.Attribute.Media<'videos'>;
+  };
+}
+
+export interface DataGame extends Struct.ComponentSchema {
+  collectionName: 'components_data_games';
+  info: {
+    description: '';
+    displayName: 'Game';
+    icon: 'puzzle';
+  };
+  attributes: {
     image: Schema.Attribute.Media<'images'>;
-    explanation: Schema.Attribute.Component<'data.explanation', false>;
+    left: Schema.Attribute.String;
+    leftId: Schema.Attribute.BigInteger;
+    right: Schema.Attribute.String;
+    rightId: Schema.Attribute.BigInteger;
   };
 }
 
-export interface ChallengeDataShortAnswerQuestion
-  extends Struct.ComponentSchema {
-  collectionName: 'components_challenge_data_short_answer_questions';
+export interface DataGameWord extends Struct.ComponentSchema {
+  collectionName: 'components_data_game_words';
   info: {
-    displayName: 'SHORT_ANSWER_QUESTION';
-  };
-  attributes: {
-    question: Schema.Attribute.Component<'data.question', true>;
-    answer: Schema.Attribute.Text;
-    explanation: Schema.Attribute.Component<'data.explanation', false>;
-  };
-}
-
-export interface ChallengeDataSelectOneWithCharacter
-  extends Struct.ComponentSchema {
-  collectionName: 'components_challenge_data_select_one_with_characters';
-  info: {
-    displayName: 'SELECT_ONE_WITH_CHARACTER';
     description: '';
+    displayName: 'game_word';
   };
   attributes: {
-    options: Schema.Attribute.Component<'data.option', true>;
-    imageAlt: Schema.Attribute.String;
+    gridPCLarge: Schema.Attribute.Component<'data.question', true>;
+    gridPhoneMedium: Schema.Attribute.Component<'data.question', true>;
+    gridPhoneSmall: Schema.Attribute.Component<'data.question', true>;
+    gridTablet: Schema.Attribute.Component<'data.question', true>;
+    heightGrid: Schema.Attribute.Integer;
+    widthGrid: Schema.Attribute.Integer;
+    wordSearch: Schema.Attribute.Component<'data.question', true>;
+  };
+}
+
+export interface DataOption extends Struct.ComponentSchema {
+  collectionName: 'components_data_options';
+  info: {
+    description: '';
+    displayName: 'option';
+    icon: 'apps';
+  };
+  attributes: {
+    answer: Schema.Attribute.String;
+    correct: Schema.Attribute.Boolean;
+    description: Schema.Attribute.Text;
     image: Schema.Attribute.Media<'images'>;
-    question: Schema.Attribute.Component<'data.question', true>;
-    explanation: Schema.Attribute.Component<'data.explanation', false>;
-  };
-}
-
-export interface ChallengeDataSelectOneVisual extends Struct.ComponentSchema {
-  collectionName: 'components_challenge_data_select_one_visuals';
-  info: {
-    displayName: 'SELECT_ONE_VISUAL';
-    icon: 'archive';
-  };
-  attributes: {
-    question: Schema.Attribute.Component<'data.question', true>;
-    options: Schema.Attribute.Component<'data.option', true>;
-    explanation: Schema.Attribute.Component<'data.explanation', false>;
-  };
-}
-
-export interface ChallengeDataPercentageQuestion
-  extends Struct.ComponentSchema {
-  collectionName: 'components_challenge_data_percentage_questions';
-  info: {
-    displayName: 'PERCENTAGE_QUESTION';
-    description: '';
-  };
-  attributes: {
-    question: Schema.Attribute.Component<'data.question', true>;
-    explanation: Schema.Attribute.Component<'data.explanation', false>;
-    answer: Schema.Attribute.Integer;
-  };
-}
-
-export interface ChallengeDataMixedQuotes extends Struct.ComponentSchema {
-  collectionName: 'components_challenge_data_mixed_quotes';
-  info: {
-    displayName: 'MIXED_QUOTES';
-  };
-  attributes: {
-    question: Schema.Attribute.Component<'data.question', true>;
-    shuffledWords: Schema.Attribute.Component<'data.question', true>;
-    correctOrder: Schema.Attribute.Component<'data.question', true>;
-  };
-}
-
-export interface ChallengeDataMatchingGame extends Struct.ComponentSchema {
-  collectionName: 'components_challenge_data_matching_games';
-  info: {
-    displayName: 'MATCHING_GAME';
-    description: '';
-  };
-  attributes: {
-    question: Schema.Attribute.Component<'data.question', true>;
-    explanation: Schema.Attribute.Component<'data.explanation', false>;
-    game: Schema.Attribute.Component<'data.game', true>;
-  };
-}
-
-export interface ChallengeDataInputTextOpen extends Struct.ComponentSchema {
-  collectionName: 'components_challenge_data_input_text_opens';
-  info: {
-    displayName: 'INPUT_TEXT_OPEN';
-  };
-  attributes: {
-    question: Schema.Attribute.Component<'data.question', true>;
-    options: Schema.Attribute.Component<'data.option', true>;
-    explanation: Schema.Attribute.Component<'data.explanation', false>;
-  };
-}
-
-export interface ChallengeDataImageToCaption extends Struct.ComponentSchema {
-  collectionName: 'components_challenge_data_image_to_captions';
-  info: {
-    displayName: 'IMAGE_TO_CAPTION';
-    description: '';
-  };
-  attributes: {
-    question: Schema.Attribute.Component<'data.question', true>;
-    options: Schema.Attribute.Component<'data.option', false>;
-    explanation: Schema.Attribute.Component<'data.explanation', false>;
-  };
-}
-
-export interface ChallengeDataFindingError extends Struct.ComponentSchema {
-  collectionName: 'components_challenge_data_finding_errors';
-  info: {
-    displayName: 'FINDING_ERROR';
-  };
-  attributes: {
-    question: Schema.Attribute.Component<'data.question', true>;
-    sentence: Schema.Attribute.Text;
-    error: Schema.Attribute.String;
-    explanation: Schema.Attribute.Component<'data.explanation', false>;
-  };
-}
-
-export interface ChallengeDataFindTheIntruder extends Struct.ComponentSchema {
-  collectionName: 'components_challenge_data_find_the_intruders';
-  info: {
-    displayName: 'FIND_THE_INTRUDER';
-  };
-  attributes: {
-    question: Schema.Attribute.Component<'data.question', true>;
-    wordsToChoice: Schema.Attribute.Component<'data.question', true>;
-    correctWord: Schema.Attribute.String;
-    explanation: Schema.Attribute.Component<'data.explanation', false>;
-  };
-}
-
-export interface ChallengeDataFillInTheBlanks extends Struct.ComponentSchema {
-  collectionName: 'components_challenge_data_fill_in_the_blanks';
-  info: {
-    displayName: 'FILL_IN_THE_BLANKS';
-    description: '';
-  };
-  attributes: {
-    question: Schema.Attribute.Component<'data.question', true>;
     text: Schema.Attribute.Text;
-    correctAnswerByOrder: Schema.Attribute.Component<'data.question', true>;
-    explanation: Schema.Attribute.Component<'data.explanation', false>;
+  };
+}
+
+export interface DataQuestion extends Struct.ComponentSchema {
+  collectionName: 'components_data_questions';
+  info: {
+    description: '';
+    displayName: 'array_string_values';
+    icon: 'question';
+  };
+  attributes: {
+    value: Schema.Attribute.Text;
   };
 }
 
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
-      'data.question': DataQuestion;
-      'data.option': DataOption;
+      'challenge-data.color-perception-game': ChallengeDataColorPerceptionGame;
+      'challenge-data.fill-in-the-blanks': ChallengeDataFillInTheBlanks;
+      'challenge-data.find-the-intruder': ChallengeDataFindTheIntruder;
+      'challenge-data.finding-error': ChallengeDataFindingError;
+      'challenge-data.image-to-caption': ChallengeDataImageToCaption;
+      'challenge-data.input-text-open': ChallengeDataInputTextOpen;
+      'challenge-data.matching-game': ChallengeDataMatchingGame;
+      'challenge-data.mixed-quotes': ChallengeDataMixedQuotes;
+      'challenge-data.percentage-question': ChallengeDataPercentageQuestion;
+      'challenge-data.puzzle': ChallengeDataPuzzle;
+      'challenge-data.select-one-visual': ChallengeDataSelectOneVisual;
+      'challenge-data.select-one-with-character': ChallengeDataSelectOneWithCharacter;
+      'challenge-data.short-answer-question': ChallengeDataShortAnswerQuestion;
+      'challenge-data.sorting-game': ChallengeDataSortingGame;
+      'challenge-data.video': ChallengeDataVideo;
+      'challenge-data.word-search': ChallengeDataWordSearch;
+      'challenge-data.wordle': ChallengeDataWordle;
+      'data.explanation': DataExplanation;
       'data.game': DataGame;
       'data.game-word': DataGameWord;
-      'data.explanation': DataExplanation;
-      'challenge-data.word-search': ChallengeDataWordSearch;
-      'challenge-data.video': ChallengeDataVideo;
-      'challenge-data.sorting-game': ChallengeDataSortingGame;
-      'challenge-data.short-answer-question': ChallengeDataShortAnswerQuestion;
-      'challenge-data.select-one-with-character': ChallengeDataSelectOneWithCharacter;
-      'challenge-data.select-one-visual': ChallengeDataSelectOneVisual;
-      'challenge-data.percentage-question': ChallengeDataPercentageQuestion;
-      'challenge-data.mixed-quotes': ChallengeDataMixedQuotes;
-      'challenge-data.matching-game': ChallengeDataMatchingGame;
-      'challenge-data.input-text-open': ChallengeDataInputTextOpen;
-      'challenge-data.image-to-caption': ChallengeDataImageToCaption;
-      'challenge-data.finding-error': ChallengeDataFindingError;
-      'challenge-data.find-the-intruder': ChallengeDataFindTheIntruder;
-      'challenge-data.fill-in-the-blanks': ChallengeDataFillInTheBlanks;
+      'data.option': DataOption;
+      'data.question': DataQuestion;
     }
   }
 }
