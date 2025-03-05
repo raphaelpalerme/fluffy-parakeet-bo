@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_challenge_data_input_text_opens",
+  "info": {
+    "displayName": "INPUT_TEXT_OPEN"
+  },
+  "options": {},
+  "attributes": {
+    "question": {
+      "type": "component",
+      "repeatable": true,
+      "component": "data.question"
+    },
+    "options": {
+      "type": "component",
+      "repeatable": true,
+      "component": "data.option"
+    },
+    "explanation": {
+      "type": "component",
+      "repeatable": false,
+      "component": "data.explanation"
+    }
+  }
+}

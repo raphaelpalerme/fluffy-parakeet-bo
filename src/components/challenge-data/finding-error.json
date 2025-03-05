@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_challenge_data_finding_errors",
+  "info": {
+    "displayName": "FINDING_ERROR"
+  },
+  "options": {},
+  "attributes": {
+    "question": {
+      "type": "component",
+      "repeatable": true,
+      "component": "data.question"
+    },
+    "sentence": {
+      "type": "text"
+    },
+    "error": {
+      "type": "string"
+    },
+    "explanation": {
+      "type": "component",
+      "repeatable": false,
+      "component": "data.explanation"
+    }
+  }
+}

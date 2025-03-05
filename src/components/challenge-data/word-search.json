@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_challenge_data_word_searches",
+  "info": {
+    "displayName": "WORD_SEARCH",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "question": {
+      "type": "component",
+      "repeatable": true,
+      "component": "data.question"
+    },
+    "game": {
+      "type": "component",
+      "repeatable": false,
+      "component": "data.game-word"
+    },
+    "explanation": {
+      "type": "component",
+      "repeatable": false,
+      "component": "data.explanation"
+    }
+  }
+}

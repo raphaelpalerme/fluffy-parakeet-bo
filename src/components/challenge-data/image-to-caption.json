@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_challenge_data_image_to_captions",
+  "info": {
+    "displayName": "IMAGE_TO_CAPTION",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "question": {
+      "type": "component",
+      "repeatable": true,
+      "component": "data.question"
+    },
+    "options": {
+      "type": "component",
+      "repeatable": false,
+      "component": "data.option"
+    },
+    "explanation": {
+      "type": "component",
+      "repeatable": false,
+      "component": "data.explanation"
+    }
+  }
+}

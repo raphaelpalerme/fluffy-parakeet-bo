@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_challenge_data_wordles",
+  "info": {
+    "displayName": "WORDLE",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "question": {
+      "type": "component",
+      "repeatable": true,
+      "component": "data.question"
+    },
+    "wordbank": {
+      "type": "component",
+      "repeatable": true,
+      "component": "data.question"
+    },
+    "explanation": {
+      "type": "component",
+      "repeatable": false,
+      "component": "data.explanation"
+    }
+  }
+}

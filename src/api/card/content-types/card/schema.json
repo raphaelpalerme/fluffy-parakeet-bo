@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cards",
+  "info": {
+    "singularName": "card",
+    "pluralName": "cards",
+    "displayName": "Card",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "appId": {
+      "type": "biginteger"
+    },
+    "lesson": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::lesson.lesson",
+      "inversedBy": "card"
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "card_data": {
+      "type": "dynamiczone",
+      "components": [
+        "data.explanation"
+      ],
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_challenge_data_find_the_intruders",
+  "info": {
+    "displayName": "FIND_THE_INTRUDER"
+  },
+  "options": {},
+  "attributes": {
+    "question": {
+      "type": "component",
+      "repeatable": true,
+      "component": "data.question"
+    },
+    "wordsToChoice": {
+      "type": "component",
+      "repeatable": true,
+      "component": "data.question"
+    },
+    "correctWord": {
+      "type": "string"
+    },
+    "explanation": {
+      "type": "component",
+      "repeatable": false,
+      "component": "data.explanation"
+    }
+  }
+}

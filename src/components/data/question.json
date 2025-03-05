@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_data_questions",
+  "info": {
+    "displayName": "array_string_values",
+    "icon": "question",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "value": {
+      "type": "text"
+    }
+  }
+}

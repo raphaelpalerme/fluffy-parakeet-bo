@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_data_games",
+  "info": {
+    "displayName": "Game",
+    "icon": "puzzle",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "left": {
+      "type": "string"
+    },
+    "right": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "leftId": {
+      "type": "biginteger"
+    },
+    "rightId": {
+      "type": "biginteger"
+    }
+  }
+}

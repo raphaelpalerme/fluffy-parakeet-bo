@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_challenge_data_matching_games",
+  "info": {
+    "displayName": "MATCHING_GAME",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "question": {
+      "type": "component",
+      "repeatable": true,
+      "component": "data.question"
+    },
+    "explanation": {
+      "type": "component",
+      "repeatable": false,
+      "component": "data.explanation"
+    },
+    "game": {
+      "type": "component",
+      "repeatable": true,
+      "component": "data.game"
+    }
+  }
+}

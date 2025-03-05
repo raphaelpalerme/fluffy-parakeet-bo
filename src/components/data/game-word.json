@@ -1,0 +1,41 @@
+{
+  "collectionName": "components_data_game_words",
+  "info": {
+    "displayName": "game_word",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "wordSearch": {
+      "type": "component",
+      "repeatable": true,
+      "component": "data.question"
+    },
+    "widthGrid": {
+      "type": "integer"
+    },
+    "heightGrid": {
+      "type": "integer"
+    },
+    "gridPhoneSmall": {
+      "type": "component",
+      "repeatable": true,
+      "component": "data.question"
+    },
+    "gridPhoneMedium": {
+      "type": "component",
+      "repeatable": true,
+      "component": "data.question"
+    },
+    "gridTablet": {
+      "type": "component",
+      "repeatable": true,
+      "component": "data.question"
+    },
+    "gridPCLarge": {
+      "type": "component",
+      "repeatable": true,
+      "component": "data.question"
+    }
+  }
+}

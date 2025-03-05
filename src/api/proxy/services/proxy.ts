@@ -1,0 +1,5 @@
+/**
+ * proxy service
+ */
+
+export default () => ({});

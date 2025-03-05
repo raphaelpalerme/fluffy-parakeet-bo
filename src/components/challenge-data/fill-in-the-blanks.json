@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_challenge_data_fill_in_the_blanks",
+  "info": {
+    "displayName": "FILL_IN_THE_BLANKS",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "question": {
+      "type": "component",
+      "repeatable": true,
+      "component": "data.question"
+    },
+    "text": {
+      "type": "text"
+    },
+    "correctAnswerByOrder": {
+      "type": "component",
+      "repeatable": true,
+      "component": "data.question"
+    },
+    "explanation": {
+      "type": "component",
+      "repeatable": false,
+      "component": "data.explanation"
+    }
+  }
+}

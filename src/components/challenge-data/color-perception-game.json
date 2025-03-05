@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_challenge_data_color_perception_games",
+  "info": {
+    "displayName": "COLOR_PERCEPTION_GAME",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "question": {
+      "type": "component",
+      "repeatable": true,
+      "component": "data.question"
+    },
+    "explanation": {
+      "type": "component",
+      "repeatable": false,
+      "component": "data.explanation"
+    }
+  }
+}

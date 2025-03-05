@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_challenge_data_percentage_questions",
+  "info": {
+    "displayName": "PERCENTAGE_QUESTION",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "question": {
+      "type": "component",
+      "repeatable": true,
+      "component": "data.question"
+    },
+    "explanation": {
+      "type": "component",
+      "repeatable": false,
+      "component": "data.explanation"
+    },
+    "answer": {
+      "type": "integer"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_challenge_data_short_answer_questions",
+  "info": {
+    "displayName": "SHORT_ANSWER_QUESTION"
+  },
+  "options": {},
+  "attributes": {
+    "question": {
+      "type": "component",
+      "repeatable": true,
+      "component": "data.question"
+    },
+    "answer": {
+      "type": "text"
+    },
+    "explanation": {
+      "type": "component",
+      "repeatable": false,
+      "component": "data.explanation"
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_challenge_data_sorting_games",
+  "info": {
+    "displayName": "SORTING_GAME",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "question": {
+      "type": "component",
+      "repeatable": true,
+      "component": "data.question"
+    },
+    "options": {
+      "type": "component",
+      "repeatable": true,
+      "component": "data.option"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "explanation": {
+      "type": "component",
+      "repeatable": false,
+      "component": "data.explanation"
+    }
+  }
+}

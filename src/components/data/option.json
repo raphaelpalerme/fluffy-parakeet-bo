@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_data_options",
+  "info": {
+    "displayName": "option",
+    "icon": "apps",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "description": {
+      "type": "text"
+    },
+    "answer": {
+      "type": "string"
+    },
+    "correct": {
+      "type": "boolean"
+    },
+    "text": {
+      "type": "text"
+    }
+  }
+}

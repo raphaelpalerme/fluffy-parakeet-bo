@@ -1,0 +1,63 @@
+{
+  "kind": "collectionType",
+  "collectionName": "challenges",
+  "info": {
+    "singularName": "challenge",
+    "pluralName": "challenges",
+    "displayName": "Challenge",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "store_response": {
+      "type": "boolean"
+    },
+    "order": {
+      "type": "integer"
+    },
+    "timer_bonus": {
+      "type": "boolean"
+    },
+    "lesson": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::lesson.lesson",
+      "inversedBy": "challenges"
+    },
+    "challenge_data": {
+      "type": "dynamiczone",
+      "components": [
+        "challenge-data.video",
+        "challenge-data.select-one-with-character",
+        "challenge-data.select-one-visual",
+        "challenge-data.mixed-quotes",
+        "challenge-data.matching-game",
+        "challenge-data.fill-in-the-blanks",
+        "challenge-data.word-search",
+        "challenge-data.sorting-game",
+        "challenge-data.find-the-intruder",
+        "challenge-data.input-text-open",
+        "challenge-data.short-answer-question",
+        "challenge-data.percentage-question",
+        "challenge-data.image-to-caption",
+        "challenge-data.finding-error",
+        "challenge-data.color-perception-game",
+        "challenge-data.puzzle",
+        "challenge-data.wordle"
+      ],
+      "max": 1,
+      "min": 1
+    },
+    "live": {
+      "type": "boolean",
+      "default": false
+    },
+    "appId": {
+      "type": "biginteger",
+      "unique": true
+    }
+  }
+}

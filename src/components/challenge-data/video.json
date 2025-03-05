@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_challenge_data_videos",
+  "info": {
+    "displayName": "VIDEO"
+  },
+  "options": {},
+  "attributes": {
+    "question": {
+      "type": "component",
+      "repeatable": true,
+      "component": "data.question"
+    },
+    "video": {
+      "allowedTypes": [
+        "videos"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

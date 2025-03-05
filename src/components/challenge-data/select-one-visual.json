@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_challenge_data_select_one_visuals",
+  "info": {
+    "displayName": "SELECT_ONE_VISUAL",
+    "icon": "archive"
+  },
+  "options": {},
+  "attributes": {
+    "question": {
+      "type": "component",
+      "repeatable": true,
+      "component": "data.question"
+    },
+    "options": {
+      "type": "component",
+      "repeatable": true,
+      "component": "data.option"
+    },
+    "explanation": {
+      "type": "component",
+      "repeatable": false,
+      "component": "data.explanation"
+    }
+  }
+}
